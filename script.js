@@ -29,7 +29,7 @@ generateBtn.addEventListener("click", writePassword);
 
 function generatePassword() {
   //create initial prompt for passworld length
-  let passLength = prompt(
+  var passLength = prompt(
     "How many characters would you like in your password? Click OK to confirm."
   );
   //create if statements to set paramaters for min/max length
@@ -98,6 +98,20 @@ function generatePassword() {
     finalArray = lower;
   } else if (confirmNumbers) {
     finalArray = numbers;
+  }
+
+  console.log(finalArray);
+
+  // create variable to be filled with for loop
+
+  var randomPassword = "";
+
+  //For loop to fill random variables in the password
+  for (var i = 0; i < passLength; i++) {
+    randomPassword =
+      randomPassword +
+      finalArray[Math.floor(Math.random() * passLength.length)];
+    console.log(randomPassword);
   }
   //return generated password
   return password;
