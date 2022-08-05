@@ -3,15 +3,80 @@ var generateBtn = document.querySelector("#generate");
 
 //create an array for lowercase letters
 var lower = [
-  "a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z",
+  "a",
+  "b",
+  "c",
+  "d",
+  "e",
+  "f",
+  "g",
+  "h",
+  "i",
+  "j",
+  "k",
+  "l",
+  "m",
+  "n",
+  "o",
+  "p",
+  "q",
+  "r",
+  "s",
+  "t",
+  "u",
+  "v",
+  "w",
+  "x",
+  "y",
+  "z",
 ];
 //create an array for numbers
-var numbers = ["1, 2, 3, 4, 5, 6, 7, 8, 9, 0"];
+var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 //create an array for special characters
-var special = ["!, @, #, $, %, ^, &, *, -, +, =, <, >, ?"];
+var special = [
+  "!",
+  "@",
+  "#",
+  "$",
+  "%",
+  "^",
+  "&",
+  "*",
+  "-",
+  "+",
+  "=",
+  "<",
+  ">",
+  "?",
+];
 //create an array for upper case letters
 var caps = [
-  "A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z",
+  "A",
+  "B",
+  "C",
+  "D",
+  "E",
+  "F",
+  "G",
+  "H",
+  "I",
+  "J",
+  "K",
+  "L",
+  "M",
+  "N",
+  "O",
+  "P",
+  "Q",
+  "R",
+  "S",
+  "T",
+  "U",
+  "V",
+  "W",
+  "X",
+  "Y",
+  "Z",
 ];
 //create a final array with boolean selected arrays
 var finalArray = "";
@@ -33,11 +98,8 @@ function generatePassword() {
     "How many characters would you like in your password? Click OK to confirm."
   );
   //create if statements to set paramaters for min/max length
-  if (passLength < 8) {
+  if (passLength < 8 || passLength > 128) {
     alert("Sorry, your password needs to be a minimum of 8 characters.");
-    generatePassword();
-  } else if (passLength > 128) {
-    alert("Sorry, your password needs to be less than 128 characters.");
     generatePassword();
   } else {
     //create confirm window for special characters
@@ -108,9 +170,12 @@ function generatePassword() {
 
   //For loop to fill random variables in the password
   for (var i = 0; i < passLength; i++) {
-    randomPassword = finalArray[Math.floor(Math.random() * finalArray.length)];
+    randomPassword =
+      randomPassword +
+      finalArray[Math.floor(Math.random() * finalArray.length)];
     console.log(randomPassword);
   }
+
   //return generated password
   return randomPassword;
 }
