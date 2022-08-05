@@ -99,7 +99,7 @@ function generatePassword() {
   );
   //create if statements to set paramaters for min/max length
   if (passLength < 8 || passLength > 128) {
-    alert("Sorry, your password needs to be a minimum of 8 characters.");
+    alert("Sorry, your password needs to be between 8 and 128 characters.");
     generatePassword();
   } else {
     //create confirm window for special characters

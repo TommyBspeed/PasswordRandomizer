@@ -1,0 +1,20 @@
+to do list on pw generator:
+
+create if statement for min/max length of pw
+include alerts for both
+
+all 4
+
+3s:
+special, caps, lower
+special caps numbers
+special lower numbers
+caps lower numbers
+
+2s:
+special caps
+special lower
+special numbers
+lower numbers
+lower caps
+caps upper
