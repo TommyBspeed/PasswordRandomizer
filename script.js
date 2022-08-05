@@ -107,10 +107,8 @@ function generatePassword() {
   var randomPassword = "";
 
   //For loop to fill random variables in the password
-  for (var i = 0; i < passLength.length; i++) {
-    randomPassword =
-      randomPassword +
-      finalArray[Math.floor(Math.random() * passLength.length)];
+  for (var i = 0; i < passLength; i++) {
+    randomPassword = finalArray[Math.floor(Math.random() * finalArray.length)];
     console.log(randomPassword);
   }
   //return generated password
